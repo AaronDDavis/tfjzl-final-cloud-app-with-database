@@ -96,7 +96,7 @@ class Enrollment(models.Model):
 
 class Question(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    question_text = models.TextField()
+    content = models.TextField()
     grade_point = models.IntegerField()
 
     def __str__(self):
@@ -114,7 +114,7 @@ class Question(models.Model):
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.TextField()
+    content = models.TextField()
     is_correct = models.BooleanField()
 
 # One enrollment could have multiple submission
